@@ -93,3 +93,27 @@ contains = "go" in s  # True
 pythonCopy code
 joined = "-".join(['a', 'b', 'c'])  # "a-b-c"
 ```
+
+
+
+## 数学运算
+
+Python 在内置的数学模块 `math` 中提供了类似的功能，还包括一些其他的数学相关模块，如 `random`、`numpy`（用于数值计算的第三方库）等。
+
+1. **基本算术运算**：加 (`+`)、减 (`-`)、乘 (`*`)、除 (`/`)、整除 (`//`)、取模 (`%`)、幂 (`**`)。
+2. **指数运算**：
+   - `pow(x, y)`：计算 `x` 的 `y` 次幂。
+   - `math.sqrt(x)`：计算平方根。
+3. **三角函数**：
+   - `math.sin(x)`、`math.cos(x)`、`math.tan(x)`：正弦、余弦和正切函数。
+   - `math.asin(x)`、`math.acos(x)`、`math.atan(x)`：反三角函数。
+4. **对数函数**：
+   - `math.log(x[, base])`：计算对数，`base` 是可选的底数，默认为 `e`。
+5. **取整和绝对值**：
+   - `round(x)`：四舍五入。
+   - `math.ceil(x)`：向上取整。
+   - `math.floor(x)`：向下取整。
+   - `abs(x)`：绝对值。
+6. **其他**：
+   - `max(x1, x2, ...)`、`min(x1, x2, ...)`：最大值和最小值。
+   - `random.random()`：生成一个介于 0.0 到 1.0 之间的随机数。

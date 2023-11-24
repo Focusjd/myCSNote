@@ -267,3 +267,26 @@ if (obj instanceof MyObject) {
 }
 ```
 
+
+
+### 数学运算
+
+1. **基本算术运算**：加 (`+`)、减 (`-`)、乘 (`*`)、除 (`/`)、取模 (`%`)。
+2. **指数运算**：
+   - `Math.pow(double a, double b)`：计算 `a` 的 `b` 次幂。
+   - `Math.sqrt(double a)`：计算平方根。
+   - `Math.cbrt(double a)`：计算立方根。
+3. **三角函数**：
+   - `Math.sin(double a)`、`Math.cos(double a)`、`Math.tan(double a)`：正弦、余弦和正切函数。
+   - `Math.asin(double a)`、`Math.acos(double a)`、`Math.atan(double a)`：反三角函数。
+4. **对数函数**：
+   - `Math.log(double a)`：自然对数（底数是 `e`）。
+   - `Math.log10(double a)`：底数是 10 的对数。
+5. **取整和绝对值**：
+   - `Math.round(double a)`：四舍五入。
+   - `Math.ceil(double a)`：向上取整。
+   - `Math.floor(double a)`：向下取整。
+   - `Math.abs(double a)`：绝对值。
+6. **其他**：
+   - `Math.max(double a, double b)`、`Math.min(double a, double b)`：最大值和最小值。
+   - `Math.random()`：生成一个介于 0.0 到 1.0 之间的随机数。
