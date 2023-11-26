@@ -32,7 +32,7 @@ String 被声明为 final，因此它不可被继承。
 
 
 
-#### Java缓存池
+### Java缓存池
 
 Java的缓存池，通常指的是Java在处理某些类型的数据时，为了提高效率和减少内存使用，而采用的一种机制，这种机制允许重复使用不变的对象。最常见的例子是整数和字符串的缓存池。
 
@@ -177,7 +177,7 @@ Java 8 中的 HashMap
 5. **弱一致性迭代器**：
    - 它的迭代器是弱一致性的，这意味着迭代器返回的结果反映了构造迭代器时或迭代期间的某个点上的映射状态。因此，迭代器不会抛出 `ConcurrentModificationException`。
 
-### 使用建议
+#### 使用建议
 
 - 在非多线程环境下，推荐使用`HashMap`，因为它更快。
 - 如果需要线程安全的映射，并且可以承受同步带来的性能损失，可以考虑`Hashtable`。但在多数情况下，更好的选择是使用`Collections.synchronizedMap`将`HashMap`包装成线程安全的，或者使用`ConcurrentHashMap`，后者提供了更高的并发性。
@@ -287,7 +287,7 @@ switch (expression) {
 }
 ```
 
-
+要加break避免穿透
 
 ### 多肽Polymorphism
 
@@ -656,6 +656,40 @@ String stringElement = addAndReturn("Hello", strings);
 4. **通配符限制**：使用通配符（如 `? extends T` 和 `? super T`）可以提供更多的灵活性，允许在使用泛型时限制未知类型的范围。
 
 
+
+### 异常
+
+
+
+![expection](./img/expection.png)
+
+#### 异常的类型
+
+1. **检查型异常（Checked Exceptions）**: **捕获（catch）异常或者声明（throw）异常**
+   - 这些异常必须在代码中显式处理（例如通过`try-catch`块）或者通过方法签名中的`throws`子句声明。
+   - 它们通常是由程序员无法预见的外部错误情况引起的，例如文件不存在、网络问题等。
+   - 例如：`IOException`, `SQLException`。
+2. **运行时异常（Runtime Exceptions）**:**不要求catch**
+   - 这些异常是在运行时发生的，通常是由于编程错误，如数组越界、空指针等。
+   - 它们是**非强制性异常**，编译器不要求显式处理它们。
+   - 例如：`NullPointerException`, `ArrayIndexOutOfBoundsException`。
+3. **错误（Errors）**:**不建议catch**
+   - 这些问题通常不是由程序本身引起的，而是由于系统异常导致的，如虚拟机错误、资源耗尽等。
+   - 它们通常是严重的问题，程序员应该避免尝试处理这些问题。
+   - 例如：`OutOfMemoryError`, `StackOverflowError`。
+
+#### 异常处理机制
+
+- **Try-Catch Block**: 用于捕获并处理异常。
+  - `try`块包含可能引发异常的代码。
+  - `catch`块用来捕获并处理异常。
+  - 可以有多个`catch`块来处理不同类型的异常。
+- **Finally Block**: 通常与`try`块一起使用，无论是否发生异常，`finally`块中的代码总是执行。
+  - 通常用于清理资源，例如关闭文件流。
+- **Throw**: 关键字用于手动抛出异常。
+- **Throws**: 在方法签名中使用，用于声明该方法可能抛出的异常。
+
+Note: finally一定会执行，即使try或者catch中有return也会在return前执行finally，不建议在finally return
 
 
 
