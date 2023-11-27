@@ -509,7 +509,7 @@ class SubClass extends SuperClass {
 
 **2. 重载（Overload）**
 
-方法重载发生在单个类中或子类中，指一个方法与已经存在的方法名称上相同，但是参数类型、个数、顺序至少有一个不同。应该注意的是，返回值不同，其它都相同不算是重载（返回类型必须相同或符合协变返回类型的规则）。
+方法重载发生在单个类中或子类中，指一个方法与已经存在的方法名称上相同，但是参数类型、个数、顺序至少有一个不同。应该注意的是，返回值不同，其它都相同不算是重载（返回类型不必相同）。
 
 
 
@@ -521,7 +521,7 @@ class SubClass extends SuperClass {
 
 类加载相当于 Class 对象的加载，类在第一次使用时才动态加载到 JVM 中。也可以使用 `Class.forName("com.mysql.jdbc.Driver")` 这种方式来控制类的加载，该方法会返回一个 Class 对象。
 
-反射可以提供运行时的类信息，并且这个类可以在运行时才加载进来，甚至在编译时期该类的 .class 不存在也可以加载进来。
+**反射可以提供运行时的类信息，并且这个类可以在运行时才加载进来**，甚至在编译时期该类的 .class 不存在也可以加载进来。
 
 Class 和 java.lang.reflect 一起对反射提供了支持，java.lang.reflect 类库主要包含了以下三个类：
 
@@ -724,6 +724,10 @@ Note: finally一定会执行，即使try或者catch中有return也会在return�
 
 - JRE：Java Runtime Environment，Java 运行环境的简称，为 Java 的运行提供了所需的环境。它是一个 JVM 程序，主要包括了 JVM 的标准实现和一些 Java 基本类库。
 - JDK：Java Development Kit，Java 开发工具包，提供了 Java 的开发及运行环境。JDK 是 Java 开发的核心，集成了 JRE 以及一些其它的工具，比如编译 Java 源码的编译器 javac 等。
+
+
+
+
 
 ## 
 
