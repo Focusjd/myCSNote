@@ -124,15 +124,20 @@ Java 集合框架提供了一套性能优异、使用广泛的数据结构和算
 
 1. 同步性
    - `Hashtable`是同步的。每个方法都是线程安全的，但这会带来性能开销。
+   
 2. 性能
    - 由于其同步性，`Hashtable`在多线程环境中比`HashMap`慢。
+   
 3. Null值
    - `Hashtable`不允许键或值为null。
+   
 4. 迭代顺序
    - 与`HashMap`类似，`Hashtable`中的元素没有确定的顺序。
+   
 5. 遗留类
    - `Hashtable`是Java早期版本的一部分，现在主要出于兼容性原因而存在。
-   - 
+   
+     
 
 #### HashMap Java7->Java8
 
@@ -183,6 +188,10 @@ Java 8 中的 HashMap
 - 如果需要线程安全的映射，并且可以承受同步带来的性能损失，可以考虑`Hashtable`。但在多数情况下，更好的选择是使用`Collections.synchronizedMap`将`HashMap`包装成线程安全的，或者使用`ConcurrentHashMap`，后者提供了更高的并发性。
 - `Hashtable`因为其设计上的限制（如不允许null值）和较老的实现，在新代码中使用较少。
 
+键和值在 `ConcurrentHashMap` 中，某些方法例如 `get()`，在找不到键时返回 `null`。如果 `ConcurrentHashMap` 允许存储空值，那么当 `get()` 返回 `null` 时，就无法区分是因为键不存在还是键存在但对应的值就是 `null`。
+
+
+
 **以下是 `HashMap` 的主要操作及其时间复杂度：**
 
 1. **插入（`put` 方法）**：
@@ -215,7 +224,7 @@ Java 8 中的 HashMap
 
 3. 类：
 
-​	不能被继承
+​	不能被继承，String` 类是 `final` 的，这意味着你不能继承（子类化）`String` 类来重写它。`final` 类不能被继承，因此其所有方法也不能被重写。
 
 
 
